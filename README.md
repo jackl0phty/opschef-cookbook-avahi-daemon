@@ -1,4 +1,7 @@
 
+
+Travis-ci status: [![Build Status](https://secure.travis-ci.org/jackl0phty/opschef-cookbook-avahi-daemon.png?branch=master)](http://travis-ci.org/jackl0phty/opschef-opschef-cookbook-avahi-daemon) 
+
 Description
 ===========
 
