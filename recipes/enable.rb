@@ -5,12 +5,6 @@
 # Copyright 2012, Gerald L. Hevener Jr., M.S.
 #
 
-# Start & enable the avahi-daemon service
-service "avahi-daemon" do
-  service_name node['avahi-daemon']['service']['name']
-  action [ :start, :enable ]
-end
-
 # Install server components for Debian
 case node['platform']
   when "debian","ubuntu"
@@ -19,4 +13,10 @@ case node['platform']
       action :install
     end
   end
+end
+
+# Start & enable the avahi-daemon service
+service "avahi-daemon" do
+  service_name node['avahi-daemon']['service']['name']
+  action [ :start, :enable ]
 end

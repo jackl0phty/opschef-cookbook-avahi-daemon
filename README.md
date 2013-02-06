@@ -26,6 +26,7 @@ Usage
 =====
 
 Apply recipe avahi-daemon::enable to install/enable all avahi-daemon related services.
+
 Recipe avahi-daemon::default takes no action.
 
 avahi-daemon::disable recipe
@@ -33,4 +34,4 @@ avahi-daemon::disable recipe
 
 Use a knife command to remove avahi-daemon components from your system like so
 
-knife run_list add <node name> avahi-daemon::disable 
+knife node run_list add <node name> avahi-daemon::disable 
