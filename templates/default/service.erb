@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone='no'?><!--*-nxml-*-->
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
-  <name replace-wildcards="<%= @replace_wildcards ? 'yes' : 'no' %>"><%= @name %></name>
+  <name replace-wildcards="<%= @replace_wildcards ? 'yes' : 'no' %>"><%= @network_name %></name>
   <% @services.each do |service| %>
     <service protocol="<%= service[:protocol] || 'any' %>">
       <type><%= service[:type] %></type>

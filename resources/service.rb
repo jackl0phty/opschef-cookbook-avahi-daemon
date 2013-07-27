@@ -4,6 +4,7 @@ actions :create, :delete
 default_action :create
 
 attribute :name, :kind_of => String, :name_attribute => true
+attribute :network_name, :kind_of => String, :default => '%h'
 attribute :owner, :kind_of => String, :default => 'root'
 attribute :group, :kind_of => String, :default => 'root'
 attribute :mode, :kind_of => Fixnum, :default => 0644

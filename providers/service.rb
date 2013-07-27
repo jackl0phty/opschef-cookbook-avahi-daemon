@@ -14,6 +14,7 @@ action :create do
 
     variables({
       :name => new_resource.name,
+      :network_name => new_resource.network_name,
       :replace_wildcards => new_resource.replace_wildcards,
       :services => new_resource.services
     })
