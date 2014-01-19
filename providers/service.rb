@@ -19,7 +19,6 @@ action :create do
     group new_resource.group
 
     variables({
-      :name => new_resource.name,
       :network_name => new_resource.network_name,
       :replace_wildcards => new_resource.replace_wildcards,
       :services => new_resource.services
@@ -27,6 +26,8 @@ action :create do
 
     notifies :restart, 'service[avahi-daemon]'
   end
+
+  new_resource.updated_by_last_action(true)
 end
 
 action :delete do
