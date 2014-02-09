@@ -1,3 +1,8 @@
+Changes in version 0.0.16
+
+* Adding support for redhat
+* Including iptables rules and recipe associated with it
+
 Changes in version 0.0.14
 
 * Fix Travis-ci build failling by fixing README.md.

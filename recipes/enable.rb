@@ -6,14 +6,25 @@
 #
 
 # Install server components for Debian
-case node['platform']
-  when "debian","ubuntu"
+case node['platform_family']
+  when "debian"
     %w{ avahi-daemon libnss-mdns }.each do |pkg|
-    package pkg do
-      action :install
+      package pkg do
+        action :install
+      end
     end
-  end
+
+  when "rhel"
+    %w{ avahi avahi-dnsconfd dbus }.each do |pkg|
+      package pkg do
+        action :install
+      end
+    end
+    service "messagebus" do
+      action [ :start, :enable ]
+    end
 end
+
 
 # Start & enable the avahi-daemon service
 service "avahi-daemon" do
