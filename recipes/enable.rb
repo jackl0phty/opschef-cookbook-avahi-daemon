@@ -15,6 +15,13 @@ case node['platform']
   end
 end
 
+template node['avahi-daemon']['service']['config'] do
+  source 'avahi-daemon.conf.erb'
+  owner 'root'
+  group 'root'
+  mode  '0644'
+end
+
 # Start & enable the avahi-daemon service
 service "avahi-daemon" do
   service_name node['avahi-daemon']['service']['name']
