@@ -22,6 +22,28 @@ Set the avahi-daemon service name.
 default['avahi-daemon']['service']['name'] = "avahi-daemon"
 </pre></code>
 
+Set the avahi-daemon config filename.
+<pre><code>
+default['avahi-daemon']['service']['config'] = "/etc/avahi/avahi-daemon.conf"
+</pre></code>
+
+Comma separated list of domains to lookup with with mDNS. Will be /etc/mdns.allow content. 
+If not defined no file will be created, and only .local domain is
+used. Put '*' to allow any domain lookup.
+<pre><code>
+node['avahi-daemon']['mdns-allow']
+</pre></code>
+
+Set config file values.
+Use node['avahi-daemon'][config_section][config_parameter] = "value"
+syntax. Please see `man avahi-daemon.conf` for details.
+
+Example:
+<pre><code>
+node['avahi-daemon']['server']['use-ipv4'] = "no"
+</pre></code>
+
+
 Usage
 =====
 
