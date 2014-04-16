@@ -20,6 +20,7 @@ template node['avahi-daemon']['service']['config'] do
   owner 'root'
   group 'root'
   mode  '0644'
+  notifies :restart, "service[#{node['avahi-daemon']['service']['name']}]", :delayed
 end
 
 # It will be .local by default
