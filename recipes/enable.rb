@@ -22,6 +22,16 @@ template node['avahi-daemon']['service']['config'] do
   mode  '0644'
 end
 
+# It will be .local by default
+if node['avahi-daemon']['mdns-allow']
+  template '/etc/mdns.allow' do
+    source 'mdns.allow.erb'
+    owner 'root'
+    group 'root'
+    mode  '0644'    
+  end
+end
+
 # Start & enable the avahi-daemon service
 service "avahi-daemon" do
   service_name node['avahi-daemon']['service']['name']
