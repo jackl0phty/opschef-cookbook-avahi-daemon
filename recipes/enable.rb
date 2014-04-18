@@ -29,7 +29,7 @@ template '/etc/mdns.allow' do
   owner 'root'
   group 'root'
   mode  '0644'
-  only_if { node['avahi-daemon']['mdns-allow']
+  only_if { node['avahi-daemon']['mdns-allow'] }
 end
 
 # Start & enable the avahi-daemon service
