@@ -57,3 +57,25 @@ avahi-daemon::disable recipe
 Use a knife command to remove avahi-daemon components from your system like so
 
 knife node run_list add <node name> avahi-daemon::disable 
+
+Resources
+=========
+
+The `avahi_daemon_service` resource can be used to generate /etc/avahi/services/\*.service files.  This will tell Avahi what services to advertise.
+
+For example:
+
+<pre><code>
+avahi_daemon_service 'afpd' do
+  services [
+    {
+      :type => '_afpovertcp._tcp',
+      :port => 548
+    },
+    {
+      :type => '_device-info._tcp',
+      :port => 0,
+      :txt_records => ['model=Xserve']
+    }]
+end
+</pre></code>

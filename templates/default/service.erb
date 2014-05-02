@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="<%= @replace_wildcards ? 'yes' : 'no' %>"><%= @network_name %></name>
+  <% @services.each do |service| %>
+    <service protocol="<%= service[:protocol] || 'any' %>">
+      <type><%= service[:type] %></type>
+      <port><%= service[:port] %></port>
+      <% if service.has_key? :domain_name %>
+        <domain-name><%= service[:domain_name] %></domain-name>
+      <% end %>
+      <% if service.has_key? :host_name %>
+        <host-name><%= service[:host_name] %></host-name>
+      <% end %>
+      <% if service.has_key? :txt_records %>
+        <% service[:txt_records].each do |record| %>
+          <txt-record><%= record %></txt-record>
+        <% end %>
+      <% end %>
+      <% if service.has_key? :sub_types %>
+        <% service[:sub_types].each do |sub_type| %>
+          <subtype><%= sub_type %></subtype>
+        <% end %>
+      <% end %>
+    </service>
+  <% end %>
+</service-group>
