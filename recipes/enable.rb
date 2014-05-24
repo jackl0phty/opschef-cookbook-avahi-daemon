@@ -6,8 +6,8 @@
 #
 
 # Install server components for Debian
-case node['platform']
-  when "debian","ubuntu"
+case node['platform_family']
+  when "debian"
     %w{ avahi-daemon libnss-mdns }.each do |pkg|
     package pkg do
       action :install
