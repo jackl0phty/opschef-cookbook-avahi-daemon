@@ -1,3 +1,8 @@
+Changes in version 0.0.15
+* Merge PR https://github.com/jackl0phty/opschef-cookbook-avahi-daemon/pull/2
+* Merge PR https://github.com/jackl0phty/opschef-cookbook-avahi-daemon/pull/5
+* Merge PR https://github.com/jackl0phty/opschef-cookbook-avahi-daemon/pull/4
+
 Changes in version 0.0.14
 
 * Fix Travis-ci build failling by fixing README.md.
