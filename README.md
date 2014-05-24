@@ -18,9 +18,7 @@ Attributes
 ==========
 
 Set the avahi-daemon service name.
-<pre><code>
-default['avahi-daemon']['service']['name'] = "avahi-daemon"
-</pre></code>
+<pre><code>default['avahi-daemon']['service']['name'] = "avahi-daemon"</pre></code>
 
 Set the avahi-daemon config filename.
 <pre><code>
