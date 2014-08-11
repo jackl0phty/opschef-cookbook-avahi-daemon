@@ -25,7 +25,6 @@ case node['platform_family']
     end
 end
 
-<<<<<<< HEAD
 template node['avahi-daemon']['service']['config'] do
   source 'avahi-daemon.conf.erb'
   owner 'root'
@@ -42,8 +41,6 @@ template '/etc/mdns.allow' do
   mode  '0644'
   only_if { node['avahi-daemon']['mdns-allow'] }
 end
-=======
->>>>>>> ec1e53d313ee66f765f7c075a764446808489f66
 
 # Start & enable the avahi-daemon service
 service "avahi-daemon" do
