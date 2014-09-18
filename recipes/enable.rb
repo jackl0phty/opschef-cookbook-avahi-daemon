@@ -7,7 +7,7 @@
 
 # Install server components for Debian
 case node['platform_family']
-  when "debian"
+  when "debian", "raspbian"
     %w{ avahi-daemon libnss-mdns }.each do |pkg|
       package pkg do
         action :install

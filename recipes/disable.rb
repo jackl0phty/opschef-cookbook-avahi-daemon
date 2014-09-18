@@ -13,7 +13,7 @@ end
 
 # Remove server components for Debian
 case node['platform']
-  when "debian","ubuntu"
+  when "debian", "raspbian"
     %w{ avahi-daemon libnss-mdns }.each do |pkg|
     package pkg do
       action :purge

@@ -12,7 +12,7 @@ Requirements
 
 This cookbook currently supports the following platforms:
 
-Debian, Ubuntu
+Debian, Ubuntu, Raspbian
 
 Attributes
 ==========
