@@ -11,7 +11,7 @@ service "avahi-daemon" do
   action [ :stop, :disable ]
 end
 
-# Remove server components for Debian
+# Remove server components
 case node['platform']
   when "debian", "ubuntu", "raspbian"
     %w{ avahi-daemon libnss-mdns }.each do |pkg|
