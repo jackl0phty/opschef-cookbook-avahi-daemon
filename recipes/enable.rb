@@ -5,9 +5,9 @@
 # Copyright 2012, Gerald L. Hevener Jr., M.S.
 #
 
-# Install server components for Debian
+# Install server components
 case node['platform_family']
-  when "debian"
+  when "debian", "ubuntu", "raspbian"
     %w{ avahi-daemon libnss-mdns }.each do |pkg|
       package pkg do
         action :install
